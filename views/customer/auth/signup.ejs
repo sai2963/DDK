@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="/output.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here if needed */
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white">
+    
+    <%- include('../includes/header'); %>
+
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full px-8 py-12 bg-black bg-opacity-70 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-8 text-center">CREATE A NEW ACCOUNT</h1>
+
+            <!-- Signup Form -->
+            <form action="#" method="post" class="space-y-4">
+                <!-- First section: Email, Confirm Email, Password -->
+                <div>
+                    <label for="email" class="block mb-2">EMAIL ID</label>
+                    <input type="email" id="email" name="email"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+
+                    <label for="confirmEmail" class="block mb-2">CONFIRM EMAIL</label>
+                    <input type="email" id="confirmEmail" name="confirmEmail"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+
+                    <label for="password" class="block mb-2">PASSWORD</label>
+                    <input type="password" id="password" name="password"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+                </div>
+
+                <!-- Second section: Full Name, Street, Postal Code, City -->
+                <div>
+                    <label for="fullName" class="block mb-2">FULL NAME</label>
+                    <input type="text" id="fullName" name="fullName"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+
+                    <label for="street" class="block mb-2">STREET</label>
+                    <input type="text" id="street" name="street"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+
+                    <label for="postalCode" class="block mb-2">POSTAL CODE</label>
+                    <input type="text" id="postalCode" name="postalCode"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+
+                    <label for="city" class="block mb-2">CITY</label>
+                    <input type="text" id="city" name="city"
+                        class="w-full bg-gray-800 rounded-md px-4 py-2 mb-4 focus:outline-none focus:ring focus:border-indigo-500">
+                </div>
+
+                <!-- Create Account Button -->
+                <button type="submit"
+                    class="bg-indigo-500 text-white py-2 px-4 rounded-md w-full hover:bg-indigo-600 transition duration-300">CREATE
+                    ACCOUNT</button>
+            </form>
+
+            <!-- Login Button -->
+            <a href="#" class="block text-center mt-4 text-gray-400 hover:text-white">LOGIN</a>
+        </div>
+    </div>
+    <%- include('../includes/footer'); %>
+</body>
+
+</html>

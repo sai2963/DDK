@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/output.css">
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+</head>
+
+<body class="bg-gray-900">
+    <div class="bg-gradient-to-r from-purple-900 to-indigo-900">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <!-- Logo on the left side -->
+            <div class="flex items-center">
+                <img src="/logo.jpeg" alt="Website Logo"
+                    class="h-10 w-10 border-2 border-white rounded-full overflow-hidden">
+                <h1 class="text-white text-lg font-semibold ml-2 hidden sm:block">
+                    <a href="#" class="text-white hover:text-gray-200 transition duration-300">DDK</a>
+                </h1>
+            </div>
+
+            <!-- Mobile view logo and menu -->
+            <div class="flex items-center sm:hidden">
+                <a href="#" class="ml-2 text-white text-lg font-semibold">DDK</a>
+                <button id="toggleMenu"
+                    class="text-white focus:outline-none ml-2">
+                    <!-- Hamburger menu icon -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation links on the right side -->
+            <nav id="navMenu" class="hidden sm:flex space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white">All Products</a>
+                <a href="#" class="text-gray-300 hover:text-white">Cart</a>
+                <a href="#" class="text-gray-300 hover:text-white">Login</a>
+                <a href="#" class="text-gray-300 hover:text-white">Signup</a>
+                <a href="#" class="text-gray-300 hover:text-white">Logout</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle menu -->
+    <script>
+        const toggleMenu = document.getElementById('toggleMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        toggleMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
