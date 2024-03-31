@@ -3,6 +3,8 @@ function getSignup(req,res){
 }
 function getLogin(req,res){
     
+    res.render('customer/auth/login')
+   
 }
 
 module.exports={

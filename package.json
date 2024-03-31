@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "build":"npx tailwindcss -i ./src/input.css -o ./views/styles/output.css --watch"
+    "run":"npx tailwindcss -i ./src/input.css -o ./views/styles/output.css --watch"
   },
   "keywords": [],
   "author": "D V SAI",
