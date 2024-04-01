@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "run": "npx tailwindcss -i ./src/input.css -o ./views/styles/output.css --watch"
+    "done": "npx tailwindcss -i ./src/input.css -o ./views/styles/output.css --watch"
   },
   "keywords": [],
   "author": "D V SAI",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
     "express": "^4.19.2",
     "mongodb": "^6.5.0"
