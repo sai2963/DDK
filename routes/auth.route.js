@@ -4,5 +4,6 @@ const router= express.Router();
 
 router.get('/signup',authController.getSignup)
 router.get('/login',authController.getLogin)
+router.get('/signup',authController.signup)
 
 module.exports=router;
