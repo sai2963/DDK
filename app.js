@@ -1,17 +1,25 @@
 const express = require("express");
 const path = require("path");
+const csrf=require('csurf')
+const expressSession=require('express-session');
 const bodyParser = require("body-parser");
 const autroutes = require("./routes/auth.route");
+const errorhandlermiddleware=require('./middleware/error-handler')
 const db = require("./data/database");
+const addCsrfTokenMiddleware=require('./middleware/csrf-token');
+const createSessionConfig = require("./config/session");
 const app = express();
 
 // Parse URL-encoded bodies (forms)
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Parse JSON bodies (JSON data)
+const sessionconfig=createSessionConfig()
+app.use(expressSession(sessionconfig))
+app.use(csrf())
+app.use(addCsrfTokenMiddleware);
 app.use(bodyParser.json());
-
+//app.use(csrf())
 app.use(autroutes);
+app.use(errorhandlermiddleware);
 app.use(express.static('views/styles'));
 app.use(express.static('images'));
 app.set('view engine', 'ejs');
