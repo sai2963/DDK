@@ -10,6 +10,9 @@ function getSignup(req, res) {
 function getLogin(req, res) {
   res.render("customer/auth/login");
 }
+function getHome(req,res){
+  res.render("customer/products/All-Products")
+}
 async function signup(req, res) {
 
   const user = new User(
@@ -44,5 +47,8 @@ async function login(req,res){
 module.exports = {
   getSignup: getSignup,
   getLogin: getLogin,
+  getHome:getHome,
   signup: signup,
+  login:login
+
 };

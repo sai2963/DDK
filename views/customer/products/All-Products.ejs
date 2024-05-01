@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="stylesheet" href="/output.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .animate-slide {
+            animation: slide 2s infinite alternate-reverse;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white">
+    <%- include('../includes/header'); %>
+    
+    <header class="max-w-5xl mx-auto overflow-hidden relative">
+        <div class="absolute inset-0 flex space-x-4 animate-slide">
+            <!-- Dummy product images -->
+            <div class="w-full h-full bg-center bg-cover"
+                style="background-image: url('https://via.placeholder.com/800x400.png?text=Product+1');"></div>
+            <div class="w-full h-full bg-center bg-cover"
+                style="background-image: url('https://via.placeholder.com/800x400.png?text=Product+2');"></div>
+            <div class="w-full h-full bg-center bg-cover"
+                style="background-image: url('https://via.placeholder.com/800x400.png?text=Product+3');"></div>
+            <!-- Add more product images as needed -->
+        </div>
+    </header>
+
+    <!-- Main body with all products -->
+    <div class="max-w-5xl mx-auto py-12">
+        <h1 class="text-3xl font-bold mb-8">All Products</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden border border-indigo-500">
+                <div class="h-64 bg-center bg-cover"
+                    style="background-image: url('https://via.placeholder.com/600x400.png?text=Product+1');"></div>
+                <div class="p-4">
+                    <p class="text-lg font-bold">Product 1</p>
+                    <p class="text-sm mt-1">Price: $XX.XX</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden border border-indigo-500">
+                <div class="h-64 bg-center bg-cover"
+                    style="background-image: url('https://via.placeholder.com/600x400.png?text=Product+2');"></div>
+                <div class="p-4">
+                    <p class="text-lg font-bold">Product 2</p>
+                    <p class="text-sm mt-1">Price: $XX.XX</p>
+                </div>
+            </div>
+
+            <!-- Add more product containers as needed -->
+        </div>
+    </div>
+
+    <!-- JavaScript for sliding product images -->
+    <script>
+        const container = document.querySelector('.animate-slide');
+        let currentPosition = 0;
+
+        function movePhotos() {
+            currentPosition -= 100;
+            container.style.transform = `translateX(${currentPosition}%)`;
+            if (currentPosition <= -200) {
+                currentPosition = 0;
+            }
+            setTimeout(movePhotos, 2000); // Slide every 2 seconds
+        }
+
+        movePhotos();
+    </script>
+</body>
+<%- include('../includes/footer'); %>
+</html>
